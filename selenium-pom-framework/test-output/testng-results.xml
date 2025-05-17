@@ -1,17 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-17T14:18:00 IST" name="Default suite" finished-at="2025-05-17T14:18:02 IST" duration-ms="1892">
+  <suite started-at="2025-05-17T21:10:26 IST" name="ParallelSuite" finished-at="2025-05-17T21:10:31 IST" duration-ms="5147">
     <groups>
     </groups>
-    <test started-at="2025-05-17T14:18:00 IST" name="Default test" finished-at="2025-05-17T14:18:02 IST" duration-ms="1892">
-      <class name="APITest.APISchimaValidation">
-        <test-method signature="SchemaValidation()[pri:0, instance:APITest.APISchimaValidation@78e4deb0]" started-at="2025-05-17T14:18:00 IST" name="SchemaValidation" finished-at="2025-05-17T14:18:02 IST" duration-ms="1857" status="PASS">
+    <test started-at="2025-05-17T21:10:26 IST" name="ChromeTest" finished-at="2025-05-17T21:10:31 IST" duration-ms="5147">
+      <class name="LoginTest.LoginE2ETest">
+        <test-method is-config="true" signature="setUpReport()[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:25 IST" name="setUpReport" finished-at="2025-05-17T21:10:26 IST" duration-ms="354" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SchemaValidation -->
-      </class> <!-- APITest.APISchimaValidation -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        </test-method> <!-- setUpReport -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method,java.lang.String)[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:26 IST" name="setup" finished-at="2025-05-17T21:10:28 IST" duration-ms="2696" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void LoginTest.LoginE2ETest.LoginTest(java.lang.String,java.lang.String) throws java.lang.Throwable]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="LoginTest(java.lang.String,java.lang.String)[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:28 IST" name="LoginTest" data-provider="LoginData" finished-at="2025-05-17T21:10:28 IST" duration-ms="26" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bikram]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bikram1234]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy20.click(Unknown Source)
+at PageObject.HomePage.clickLogin(HomePage.java:32)
+at LoginTest.LoginE2ETest.LoginTest(LoginE2ETest.java:23)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:28 IST" name="tearDown" finished-at="2025-05-17T21:10:29 IST" duration-ms="199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method,java.lang.String)[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:29 IST" name="setup" finished-at="2025-05-17T21:10:31 IST" duration-ms="2011" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void LoginTest.LoginE2ETest.LoginTest(java.lang.String,java.lang.String) throws java.lang.Throwable]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="LoginTest(java.lang.String,java.lang.String)[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:31 IST" name="LoginTest" data-provider="LoginData" finished-at="2025-05-17T21:10:31 IST" duration-ms="1" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bikram1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bikram12345]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.SearchContext.findElement(org.openqa.selenium.By)" because "this.searchContext" is null
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy20.click(Unknown Source)
+at PageObject.HomePage.clickLogin(HomePage.java:32)
+at LoginTest.LoginE2ETest.LoginTest(LoginE2ETest.java:23)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:31 IST" name="tearDown" finished-at="2025-05-17T21:10:31 IST" duration-ms="166" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:LoginTest.LoginE2ETest@76494737]" started-at="2025-05-17T21:10:31 IST" name="tearDownReport" finished-at="2025-05-17T21:10:31 IST" duration-ms="263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownReport -->
+      </class> <!-- LoginTest.LoginE2ETest -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- ParallelSuite -->
 </testng-results>

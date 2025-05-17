@@ -3,11 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="APITest.APISchimaValidation">
+      <class name="LoginTest.LoginE2ETest">
         <methods>
-          <include name="SchemaValidation"/>
+          <include name="tearDown"/>
+          <include name="setup"/>
+          <include name="setUpReport"/>
+          <include name="tearDownReport"/>
+          <include name="LoginTest"/>
         </methods>
-      </class> <!-- APITest.APISchimaValidation -->
+      </class> <!-- LoginTest.LoginE2ETest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

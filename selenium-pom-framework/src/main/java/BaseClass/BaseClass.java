@@ -70,12 +70,8 @@ public class BaseClass {
 	}
 
 	@AfterMethod
-	public void tearDown(ITestResult result) {
-		if (ITestResult.FAILURE == result.getStatus()) {
-			Screenshots.takeScreenshot(driver, result.getName());
-			ExtentTestManager.getTest().fail("Test Failed: " + result.getThrowable());
-			DriverFactory.quitDriver();
-		}
+	public void tearDown() {
+		DriverFactory.quitDriver();
 	}
 
 	@AfterSuite

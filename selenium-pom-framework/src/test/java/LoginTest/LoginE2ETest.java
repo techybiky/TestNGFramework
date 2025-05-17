@@ -1,11 +1,14 @@
 package LoginTest;
 
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import BaseClass.BaseClass;
 import PageObject.HomePage;
+import Utils.TestListener;
 
+@Listeners(TestListener.class)
 public class LoginE2ETest extends BaseClass {
 
 	@DataProvider(name = "LoginData")

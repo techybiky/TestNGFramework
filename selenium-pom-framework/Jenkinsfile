@@ -1,0 +1,44 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'MAVEN_HOME'
+        jdk 'JDK11'
+    }
+
+    environment {
+        REPORT_DIR = "test-output"
+    }
+
+    stages {
+        stage('Checkout Code') {
+            steps {
+                git url: 'https://github.com/yourusername/TestNG.git', branch: 'main'
+            }
+        }
+
+        stage('Build and Test') {
+            steps {
+                sh 'mvn clean test'
+            }
+        }
+
+        stage('Publish TestNG Report') {
+            steps {
+                publishHTML([
+                    reportDir: 'test-output',
+                    reportFiles: 'index.html',
+                    reportName: 'TestNG Report',
+                    alwaysLinkToLastBuild: true,
+                    keepAll: true
+                ])
+            }
+        }
+    }
+
+    post {
+        always {
+            junit 'target/surefire-reports/*.xml'
+        }
+    }
+}

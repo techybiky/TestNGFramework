@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'MAVEN_HOME'
-        jdk 'JDK11'
-    }
-
     environment {
         REPORT_DIR = "test-output"
     }
@@ -13,32 +8,39 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git url: 'https://github.com/yourusername/TestNG.git', branch: 'main'
+                git url: 'https://github.com/techybiky/TestNGFramework.git', branch: 'main'
             }
         }
 
         stage('Build and Test') {
             steps {
-                sh 'mvn clean test'
+                dir('selenium-pom-framework') {
+                    sh 'mvn clean test'
+                }
             }
         }
 
         stage('Publish TestNG Report') {
             steps {
-                publishHTML([
-                    reportDir: 'test-output',
-                    reportFiles: 'index.html',
-                    reportName: 'TestNG Report',
-                    alwaysLinkToLastBuild: true,
-                    keepAll: true
-                ])
+                dir('selenium-pom-framework') {
+                    publishHTML(target: [
+                        allowMissing: false,
+                        alwaysLinkToLastBuild: true,
+                        keepAll: true,
+                        reportDir: 'test-output',
+                        reportFiles: 'index.html',
+                        reportName: 'TestNG Report'
+                    ])
+                }
             }
         }
     }
 
     post {
         always {
-            junit 'target/surefire-reports/*.xml'
+            dir('selenium-pom-framework') {
+                junit 'target/surefire-reports/*.xml'
+            }
         }
     }
 }
